@@ -18,7 +18,6 @@ struct Service{
     
     func fetchVideos(from url : String){
         
-        //var videos : [Videos] = []
         if let safeURL = URL(string: url){
             
             let session = URLSession(configuration: .default)
@@ -34,8 +33,6 @@ struct Service{
                         let jsonData = try JSONDecoder().decode([Videos].self, from: safeData)
                         
                         DispatchQueue.main.async {
-                            //videos.append(contentsOf: jsonData)
-                            
                             let sortedData = sortByDate(on: jsonData)
                             self.delegate?.updateVideos(videos: sortedData)
                         }
@@ -43,12 +40,12 @@ struct Service{
                     } catch{
                         self.delegate?.reciveError(error: error)
                     }
-                
+                    
                 }
             }
             task.resume()
         }
-            
+        
     }
     
     func sortByDate(on array: [Videos]) -> [Videos]{

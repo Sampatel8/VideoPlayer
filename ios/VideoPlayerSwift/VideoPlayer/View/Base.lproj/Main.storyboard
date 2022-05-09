@@ -39,6 +39,15 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pk5-VV-sfr" userLabel="VideoView">
                                 <rect key="frame" x="0.0" y="134" width="414" height="269"/>
                                 <subviews>
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="IB8-xk-NuG">
+                                        <rect key="frame" x="188.5" y="116" width="37" height="37"/>
+                                    </activityIndicatorView>
+                                    <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Video Is Not Playable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qud-66-Jo6">
+                                        <rect key="frame" x="20" y="124" width="374" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7e3-BI-mUC">
                                         <rect key="frame" x="177" y="104.5" width="60" height="60"/>
                                         <color key="backgroundColor" systemColor="systemGray5Color"/>
@@ -75,9 +84,9 @@
                                             <action selector="nextButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OYQ-li-YEi"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRy-t0-0eS">
+                                    <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tRy-t0-0eS">
                                         <rect key="frame" x="97" y="109.5" width="50" height="50"/>
-                                        <color key="backgroundColor" systemColor="systemGray5Color"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="A2V-VI-Sdm"/>
                                             <constraint firstAttribute="width" constant="50" id="hCI-gs-Bok"/>
@@ -95,14 +104,24 @@
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstItem="Fwm-mw-zAy" firstAttribute="centerY" secondItem="pk5-VV-sfr" secondAttribute="centerY" id="70M-2R-Q33"/>
                                     <constraint firstItem="7e3-BI-mUC" firstAttribute="centerY" secondItem="pk5-VV-sfr" secondAttribute="centerY" id="86Y-rv-4Wk"/>
                                     <constraint firstItem="Fwm-mw-zAy" firstAttribute="leading" secondItem="7e3-BI-mUC" secondAttribute="trailing" constant="30" id="8rg-ZU-9ds"/>
                                     <constraint firstItem="tRy-t0-0eS" firstAttribute="centerY" secondItem="pk5-VV-sfr" secondAttribute="centerY" id="AfZ-JU-6rv"/>
+                                    <constraint firstItem="qud-66-Jo6" firstAttribute="centerX" secondItem="pk5-VV-sfr" secondAttribute="centerX" id="MQA-Ng-ins"/>
+                                    <constraint firstItem="IB8-xk-NuG" firstAttribute="centerX" secondItem="qud-66-Jo6" secondAttribute="centerX" id="SJE-PX-qNn"/>
                                     <constraint firstItem="7e3-BI-mUC" firstAttribute="centerX" secondItem="pk5-VV-sfr" secondAttribute="centerX" id="Wgb-Oi-lvE"/>
+                                    <constraint firstItem="IB8-xk-NuG" firstAttribute="centerY" secondItem="qud-66-Jo6" secondAttribute="centerY" id="WuJ-KR-mgi"/>
+                                    <constraint firstAttribute="trailing" secondItem="qud-66-Jo6" secondAttribute="trailing" constant="20" id="kNA-sh-JqU"/>
                                     <constraint firstItem="7e3-BI-mUC" firstAttribute="leading" secondItem="tRy-t0-0eS" secondAttribute="trailing" constant="30" id="mP9-HY-QEn"/>
+                                    <constraint firstItem="qud-66-Jo6" firstAttribute="leading" secondItem="pk5-VV-sfr" secondAttribute="leading" constant="20" id="qDh-HM-UJW"/>
+                                    <constraint firstItem="qud-66-Jo6" firstAttribute="centerY" secondItem="pk5-VV-sfr" secondAttribute="centerY" id="uAV-rM-VxK"/>
                                 </constraints>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="nLT-m9-2pj" appends="YES" id="IIr-mA-AaB"/>
+                                </connections>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vdM-hA-21i">
                                 <rect key="frame" x="0.0" y="403" width="414" height="459"/>
@@ -174,14 +193,21 @@
                     <connections>
                         <outlet property="authorLabel" destination="Wj0-ZG-fL7" id="J9I-OU-N9G"/>
                         <outlet property="detailsLabel" destination="tgQ-Fp-0Nd" id="NJe-Fh-BHe"/>
+                        <outlet property="errorLabel" destination="qud-66-Jo6" id="GZ3-fb-yrL"/>
                         <outlet property="nextButton" destination="Fwm-mw-zAy" id="CMu-vf-yhU"/>
                         <outlet property="playButton" destination="7e3-BI-mUC" id="q4D-dj-O13"/>
                         <outlet property="previousButton" destination="tRy-t0-0eS" id="czu-lN-jnH"/>
-                        <outlet property="titileLabel" destination="79p-Ks-uDX" id="WRa-lA-vxH"/>
+                        <outlet property="titleLabel" destination="79p-Ks-uDX" id="3g5-Wk-bCi"/>
+                        <outlet property="videoActivityIndicator" destination="IB8-xk-NuG" id="yUB-jA-5Mv"/>
                         <outlet property="videoView" destination="pk5-VV-sfr" id="LR4-NP-geU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="nLT-m9-2pj">
+                    <connections>
+                        <action selector="videoPlayerTapped:" destination="BYZ-38-t0r" id="JFA-3b-P4l"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="121.73913043478262" y="108.48214285714285"/>
         </scene>
