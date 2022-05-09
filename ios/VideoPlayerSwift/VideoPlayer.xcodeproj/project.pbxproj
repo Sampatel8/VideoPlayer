@@ -14,6 +14,8 @@
 		258A6C6028289858003F03BD /* VideoPlayer.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 258A6C5E28289858003F03BD /* VideoPlayer.xcdatamodeld */; };
 		258A6C6228289859003F03BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 258A6C6128289859003F03BD /* Assets.xcassets */; };
 		258A6C6528289859003F03BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 258A6C6328289859003F03BD /* LaunchScreen.storyboard */; };
+		25C01A552828AD9C002399C7 /* Videos.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C01A542828AD9C002399C7 /* Videos.swift */; };
+		25C01A572828ADD2002399C7 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25C01A562828ADD2002399C7 /* Service.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		258A6C6128289859003F03BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		258A6C6428289859003F03BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		258A6C6628289859003F03BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25C01A542828AD9C002399C7 /* Videos.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Videos.swift; sourceTree = "<group>"; };
+		25C01A562828ADD2002399C7 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,8 +65,8 @@
 				258A6C5528289858003F03BD /* AppDelegate.swift */,
 				258A6C5728289858003F03BD /* SceneDelegate.swift */,
 				258A6C6E28289893003F03BD /* Model */,
-				258A6C6C28289883003F03BD /* View */,
 				258A6C6D28289889003F03BD /* Controller */,
+				258A6C6C28289883003F03BD /* View */,
 				258A6C6128289859003F03BD /* Assets.xcassets */,
 				258A6C6628289859003F03BD /* Info.plist */,
 				258A6C5E28289858003F03BD /* VideoPlayer.xcdatamodeld */,
@@ -90,6 +94,8 @@
 		258A6C6E28289893003F03BD /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				25C01A542828AD9C002399C7 /* Videos.swift */,
+				25C01A562828ADD2002399C7 /* Service.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -168,7 +174,9 @@
 				258A6C6028289858003F03BD /* VideoPlayer.xcdatamodeld in Sources */,
 				258A6C5A28289858003F03BD /* ViewController.swift in Sources */,
 				258A6C5628289858003F03BD /* AppDelegate.swift in Sources */,
+				25C01A552828AD9C002399C7 /* Videos.swift in Sources */,
 				258A6C5828289858003F03BD /* SceneDelegate.swift in Sources */,
+				25C01A572828ADD2002399C7 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
